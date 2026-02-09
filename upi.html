@@ -1,0 +1,133 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>UPI Payment</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#fdfbfb,#ebedee);
+}
+
+.upi-box{
+  width:380px;
+  margin:60px auto;
+  background:#fff;
+  padding:25px;
+  text-align:center;
+  border-radius:12px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.15);
+}
+
+h2{
+  margin-bottom:5px;
+}
+
+.amount{
+  font-size:26px;
+  font-weight:600;
+  color:#27ae60;
+  margin:10px 0 20px;
+}
+
+.qr{
+  width:220px;
+  border:2px dashed #ddd;
+  padding:10px;
+  border-radius:10px;
+}
+
+.note{
+  color:#555;
+  font-size:14px;
+  margin-top:10px;
+}
+
+.transaction-input{
+  margin:15px 0;
+}
+
+.transaction-input input{
+  width:100%;
+  padding:10px;
+  font-size:14px;
+  border:1px solid #ccc;
+  border-radius:6px;
+}
+
+button{
+  margin-top:20px;
+  width:100%;
+  padding:14px;
+  font-size:16px;
+  background:#000;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#333;
+}
+
+.secure{
+  margin-top:12px;
+  font-size:13px;
+  color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<div class="upi-box">
+
+<h2>Pay Using UPI</h2>
+<p class="note">Scan the QR or tap Pay Now</p>
+
+<div class="amount">
+  ₹ <span id="totalAmount">0</span>
+</div>
+
+<img src="sacn.png" class="qr">
+
+<p class="note">UPI ID: shop@upi</p>
+
+<!-- Transaction ID Input -->
+<div class="transaction-input">
+  <input type="text" id="txnInput" placeholder="Enter your Transaction ID after payment">
+</div>
+
+<button onclick="payUPI()">Pay ₹ <span id="payAmt">0</span></button>
+
+<p class="secure">🔒 Secure UPI Payment</p>
+
+</div>
+
+<script>
+// Get amount from localStorage
+let amount = localStorage.getItem("totalAmount") || 0;
+document.getElementById("totalAmount").innerText = amount;
+document.getElementById("payAmt").innerText = amount;
+
+function payUPI(){
+  let txnId = document.getElementById("txnInput").value.trim();
+
+  if(txnId === ""){
+    alert("Please enter your Transaction ID to proceed.");
+    return;
+  }
+
+  alert("Payment of ₹" + amount + " Successful 🎉\nTransaction ID: " + txnId);
+  
+  localStorage.removeItem("cart");
+  localStorage.removeItem("totalAmount");
+  
+  window.location.href="thankyou.html";
+}
+</script>
+
+</body>
+</html>
