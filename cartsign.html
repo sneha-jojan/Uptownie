@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ecommerce Login | Signup</title>
+  <link rel="stylesheet" href="Sign.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+  <div class="form-box">
+
+    <!-- Sign In -->
+    <form id="loginForm" class="form active">
+      <h2>Welcome Back 👋</h2>
+      <p>Login to continue shopping</p>
+
+      <input type="email" placeholder="Email Address" required>
+      <input type="password" placeholder="Password" required>
+
+      <button type="submit">Sign In</button>
+
+      <span class="switch">Don’t have an account? 
+        <a href="#" onclick="showSignup()">Sign Up</a>
+      </span>
+    </form>
+
+    <!-- Sign Up -->
+    <form id="signupForm" class="form">
+      <h2>Create Account ✨</h2>
+      <p>Join us for the best shopping experience</p>
+
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="password" placeholder="Password" required>
+
+      <button type="submit">Sign Up</button>
+
+      <span class="switch">Already have an account? 
+        <a href="#" onclick="showLogin()">Sign In</a>
+      </span>
+    </form>
+
+  </div>
+</div>
+
+<script src="cartsign.js"></script>
+</body>
+</html>

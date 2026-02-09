@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Card Payment</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#fdfbfb,#ebedee);
+}
+
+.card-box{
+  width:380px;
+  margin:60px auto;
+  background:#fff;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.15);
+}
+
+h2{
+  text-align:center;
+  margin-bottom:10px;
+}
+
+.amount{
+  text-align:center;
+  font-size:22px;
+  color:#27ae60;
+  margin-bottom:20px;
+}
+
+input{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border:1px solid #ccc;
+  border-radius:6px;
+  font-size:14px;
+}
+
+button{
+  width:100%;
+  padding:14px;
+  margin-top:15px;
+  font-size:16px;
+  background:#000;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#333;
+}
+
+.secure{
+  text-align:center;
+  margin-top:10px;
+  font-size:13px;
+  color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card-box">
+
+<h2>Card Payment</h2>
+
+<div class="amount">
+  Pay ₹ <span id="totalAmount">0</span>
+</div>
+
+<input type="text" id="cardNumber" placeholder="Card Number (16 digits)" maxlength="16">
+<input type="text" id="cardName" placeholder="Card Holder Name">
+<input type="text" id="expiry" placeholder="MM/YY" maxlength="5">
+<input type="password" id="cvv" placeholder="CVV" maxlength="3">
+
+<button onclick="payCard()">Pay Now</button>
+
+<p class="secure">🔒 Secure Card Payment</p>
+
+</div>
+
+<script>
+let amount = localStorage.getItem("totalAmount") || 0;
+document.getElementById("totalAmount").innerText = amount;
+
+function payCard(){
+  let cardNumber = document.getElementById("cardNumber").value.trim();
+  let cardName = document.getElementById("cardName").value.trim();
+  let expiry = document.getElementById("expiry").value.trim();
+  let cvv = document.getElementById("cvv").value.trim();
+
+  // Validation
+  if(cardNumber.length !== 16 || isNaN(cardNumber)){
+    alert("Enter valid 16-digit card number");
+    return;
+  }
+
+  if(cardName === ""){
+    alert("Enter card holder name");
+    return;
+  }
+
+  if(!/^(0[1-9]|1[0-2])\/\d{2}$/.test(expiry)){
+    alert("Enter valid expiry date (MM/YY)");
+    return;
+  }
+
+  if(cvv.length !== 3 || isNaN(cvv)){
+    alert("Enter valid CVV");
+    return;
+  }
+
+  alert("Payment of ₹" + amount + " Successful 🎉");
+
+  localStorage.removeItem("cart");
+  localStorage.removeItem("totalAmount");
+
+  window.location.href="thankyou.html";
+}
+</script>
+
+</body>
+</html>

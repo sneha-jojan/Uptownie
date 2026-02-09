@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Details | Girls Fashion</title>
+    <link rel="stylesheet" href="blog-details.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #fff5f8;
+}
+
+.details-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    background: #ffffff;
+    border-radius: 22px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    overflow: hidden;
+}
+
+.details-container img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+.details-content {
+    padding: 35px;
+}
+
+.details-content h1 {
+    color: #e91e63;
+    margin-bottom: 15px;
+}
+
+.details-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+}
+
+.shop-btn {
+    display: inline-block;
+    margin-top: 25px;
+    background: linear-gradient(to right, #e91e63, #ff69b4);
+    color: #fff;
+    padding: 12px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    
+}
+.details-container img {
+    width: 100%;
+    object-fit: contain;
+    background: #fff;
+    padding: 10px;
+}
+
+
+</style>
+<div class="details-container">
+    <img id="blogImage" src="" alt="Fashion Image">
+
+    <div class="details-content">
+        <h1 id="blogTitle"></h1>
+        <p id="blogText"></p>
+
+        <a id="shopBtn" href="#" class="shop-btn">Shop Now</a>
+    </div>
+</div>
+
+<script>
+const blogData = {
+    dress: {
+        title: "Latest Tops Collection",
+        image: "Top1.png",
+        text: "Discover trendy and comfortable tops perfect for daily wear, outings, and casual occasions. Designed for modern girls who love style with comfort.",
+        shopLink: "Tops.html"
+    },
+    bridal: {
+        title: "Winter Wear Trends",
+        image: "winter.webp",
+        text: "Explore stylish winter wear including sweaters, jackets and coats for the season.",
+        shopLink: "Winter.html"
+    },
+    traditional: {
+        title: "Traditional Wear Collection",
+        image: "trdb.jpg",
+        text: "Traditional outfits reflect culture and elegance. Explore sarees, lehengas, and ethnic wear perfect for festivals and family celebrations.",
+        shopLink: "trd.html"
+    },
+    party: {
+        title: "Party Wear Fashion",
+        image: "dress1.webp",
+        text: "Turn heads with glamorous party wear dresses designed to make you shine at every celebration and special occasion.",
+        shopLink: "party.html"
+    }
+};
+
+const params = new URLSearchParams(window.location.search);
+const category = params.get("category");
+
+if (blogData[category]) {
+    document.getElementById("blogTitle").innerText = blogData[category].title;
+    document.getElementById("blogImage").src = blogData[category].image;
+    document.getElementById("blogText").innerText = blogData[category].text;
+    document.getElementById("shopBtn").href = blogData[category].shopLink;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Your Cart</title>
+
+<link rel="stylesheet" href="cart.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+<body>
+
+<div class="cart-page">
+
+  <h2 class="cart-title">
+    <i class="fa fa-shopping-bag"></i> Your Cart
+  </h2>
+
+  <div id="cartItems" class="cart-items"></div>
+
+  <div class="cart-summary">
+    <h3>Total: ₹<span id="cartTotal">0</span></h3>
+    <button class="checkout-btn" onclick="goToCheckout()">Place Order</button>
+  </div>
+
+</div>
+
+<script src="cart.js"></script>
+</body>
+</html>

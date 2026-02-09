@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Account | Ecommerce</title>
+  <link rel="stylesheet" href="signup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="auth-container">
+  <form class="auth-box" id="signupForm">
+    <h2>Create Account</h2>
+    <p>Sign up to start shopping</p>
+
+    <input type="text" id="name" placeholder="Full Name">
+    <small class="error" id="nameError"></small>
+
+    <input type="email" id="email" placeholder="Email Address">
+    <small class="error" id="emailError"></small>
+
+    <input type="password" id="password" placeholder="Password">
+    <small class="error" id="passwordError"></small>
+
+    <input type="password" id="confirmPassword" placeholder="Confirm Password">
+    <small class="error" id="confirmError"></small>
+
+    <button type="submit">Sign Up</button>
+
+    <span class="link">
+      Already have an account?
+      <a href="cartsign.html">Sign In</a>
+    </span>
+
+    <p class="success" id="successMsg"></p>
+  </form>
+</div>
+
+<script src="cartsignup.js"></script>
+</body>
+</html>

@@ -1,0 +1,354 @@
+/* ===== RESET & FONT ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== TOP BAR ===== */
+.top-bar {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+.top-bar a{
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+
+/* ===== HEADER ===== */
+.header {
+  background: #fff;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.icons {
+  display: flex;
+  gap: 20px;
+  font-size: 18px;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: #222;
+  padding: 0 50px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+.navbar ul li {
+  position: relative;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 0;
+  display: block;
+  font-size: 17px;
+  position: relative;
+}
+
+.navbar ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.navbar ul li:hover a::after {
+  width: 100%;
+}
+
+/* ===== DROPDOWN MENU ===== */
+.dropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: #fff;
+  width: 220px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.dropdown a {
+  color: #333 !important;
+  padding: 12px 20px;
+  display: block;
+  font-size: 14px;
+}
+
+.dropdown a:hover {
+  background: #f5f5f5;
+}
+
+.navbar ul li:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ===== SLIDER ===== */
+.slider {
+  width: 100%;
+  height: 650px;  
+  overflow: hidden;
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  height: 100%;
+  animation: slideAnimation 24s infinite;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       
+  object-position: center top; 
+}
+
+.slide-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+  z-index: 10;
+}
+
+.slide-content h2 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.slide-content p {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+@keyframes slideAnimation {
+  0%, 15% { transform: translateX(0); }
+  20%, 35% { transform: translateX(-100%); }
+  40%, 55% { transform: translateX(-200%); }
+  60%, 75% { transform: translateX(-300%); }
+  80%, 95% { transform: translateX(-400%); }
+  100% { transform: translateX(-500%); }
+}
+
+/* ===== CATEGORIES ===== */
+.categories {
+  padding: 40px 50px;
+  background: #fafafa;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  align-items: center;
+}
+
+.category-card {
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.category-card img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.category-card h3 {
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+
+.category-card:hover img {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* ===== OPTIONS SECTION ===== */
+.options-section {
+  padding: 60px 50px;
+}
+
+.options-section h2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.option-card img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 1024px) {
+  .category-card img { height: 180px; }
+  .option-card img { height: 360px; }
+  .slide-content h2 { font-size: 36px; }
+  .slide-content p { font-size: 16px; }
+  .slider { height: 520px; }
+}
+
+@media (max-width: 768px) {
+  .header { padding: 15px 20px; }
+  .navbar { padding: 0 20px; }
+  .slider { height: 400px; }
+  .navbar ul { gap: 18px; font-size: 15px; }
+  .category-grid { grid-template-columns: repeat(2, 1fr); }
+  .category-card img { height: 280px; }
+  .options-grid { grid-template-columns: repeat(2, 1fr); }
+  .slide-content h2 { font-size: 28px; }
+  .slide-content p { font-size: 14px; }
+}
+
+@media (max-width: 480px) {
+  .category-grid { grid-template-columns: 1fr; }
+  .category-card img { height: 180px; }
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #222;
+  color: #fff;
+  padding: 60px 50px 20px;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1 1 220px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.footer-section p {
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #f39c12; /* Accent color on hover */
+}
+
+/* SOCIAL ICONS */
+.footer-section.social .social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.footer-section.social .social-icons a {
+  color: #fff;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.footer-section.social .social-icons a:hover {
+  color: #f39c12; /* Accent color on hover */
+}
+
+
+/* FOOTER BOTTOM */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* ===== RESPONSIVE FOOTER ===== */
+@media (max-width: 1024px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 40px 20px 20px;
+  }
+}

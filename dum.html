@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Women Clothing Store</title>
+
+ <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* TOP BAR */
+.top-offer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  font-size: 13px;
+}
+
+/* HEADER */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #000;
+  margin: 0 16px;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.menu a:hover {
+  border-bottom: 2px solid black;
+}
+
+.header-icons span {
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+/* BANNER */
+.banner {
+  position: relative;
+}
+
+.banner img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+}
+
+.banner-text h1 {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.banner-text button {
+  margin-top: 15px;
+  padding: 12px 28px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* PRODUCTS */
+.shop-section {
+  padding: 60px 50px;
+}
+
+.shop-section h2 {
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.product img {
+  width: 100%;
+}
+
+.product p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.product span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* FOOTER */
+.footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+ </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- TOP OFFER BAR -->
+<div class="top-offer">
+  EXTRA 12% OFF ABOVE ₹1999 | USE CODE: EXTRA12
+</div>
+
+<!-- HEADER -->
+<header class="main-header">
+  <div class="logo">UPTOWNIE</div>
+
+  <nav class="menu">
+    <a href="#">NEW IN</a>
+    <a href="#">TOPS</a>
+    <a href="#">SHIRTS</a>
+    <a href="#">DRESSES</a>
+    <a href="#">CO-ORDS</a>
+    <a href="#">BOTTOMS</a>
+  </nav>
+
+  <div class="header-icons">
+    <span>🔍</span>
+    <span>♡</span>
+    <span>🛒</span>
+  </div>
+</header>
+
+<!-- BANNER -->
+<section class="banner">
+  <img src="images/banner.jpg" alt="Banner">
+  <div class="banner-text">
+    <h1>NEW ARRIVALS</h1>
+    <button>SHOP NOW</button>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="shop-section">
+  <h2>NEW IN</h2>
+
+  <div class="product-grid">
+
+    <div class="product">
+      <img src="images/p1.jpg">
+      <p>Printed Crop Top</p>
+      <span>₹1,299</span>
+    </div>
+
+    <div class="product">
+      <img src="images/p2.jpg">
+      <p>Solid Shirt</p>
+      <span>₹1,499</span>
+    </div>
+
+    <div class="product">
+      <img src="images/p3.jpg">
+      <p>Summer Dress</p>
+      <span>₹1,899</span>
+    </div>
+
+    <div class="product">
+      <img src="images/p4.jpg">
+      <p>Co-ord Set</p>
+      <span>₹2,299</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 Women Fashion Store</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
